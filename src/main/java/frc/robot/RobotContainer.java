@@ -102,9 +102,9 @@ private RobotContainer() {
         JoystickButton bButton = new JoystickButton(driveControler1, 2);
         bButton.whileTrue(new Arm_OpenLoopRun(()->-0.75, m_arm));
         JoystickButton lBumper = new JoystickButton(driveControler1, 5);
-        lBumper.whileTrue(new CoralCanon_SetSpeed(() -> .2, m_coral_Canon));
+        lBumper.whileTrue(new CoralCanon_SetSpeed(() -> .22, m_coral_Canon));
         JoystickButton rBumper = new JoystickButton(driveControler1, 6);
-        rBumper.whileTrue(new CoralCanon_SetSpeed(() -> - .2, m_coral_Canon));
+        rBumper.whileTrue(new CoralCanon_SetSpeed(() -> - .22, m_coral_Canon));
         
   }
 
