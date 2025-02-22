@@ -1,0 +1,40 @@
+package frc.robot.commands;
+
+import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.subsystems.DriveTrain;
+import edu.wpi.first.wpilibj.Timer;
+
+public class AutoDrive extends CommandBase {
+    private final DriveTrain m_driveTrain;
+    private final Timer timer = new Timer();
+
+    public AutoDrive(DriveTrain driveTrain) {
+        this.m_driveTrain = driveTrain;
+        addRequirements(m_driveTrain);
+    }
+
+    @Override
+    public void initialize() {
+        timer.reset();
+        timer.start();
+    }
+
+    @Override
+    public void execute() {
+        if (timer.get() < 5.0) {  // Drive forward for 5 seconds
+            m_driveTrain.my_drive(0.5, 0);  // Adjust speed as needed
+        } else {
+            m_driveTrain.my_drive(0, 0);  // Stop
+        }
+    }
+
+    @Override
+    public void end(boolean interrupted) {
+        m_driveTrain.my_drive(0, 0);  // Ensure stop
+    }
+
+    @Override
+    public boolean isFinished() {
+        return timer.get() >= 5.0;  // Stop after 5 seconds
+    }
+}

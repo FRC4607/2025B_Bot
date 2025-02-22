@@ -13,8 +13,6 @@
 package frc.robot.subsystems;
 
 
-import frc.robot.commands.*;
-import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
@@ -22,7 +20,6 @@ import com.revrobotics.spark.SparkBase.PersistMode;
 import com.revrobotics.spark.SparkBase.ResetMode;
 import com.revrobotics.spark.SparkLowLevel.MotorType;
 import com.revrobotics.spark.SparkMax;
-import com.revrobotics.spark.config.ClosedLoopConfig.FeedbackSensor;
 import com.revrobotics.spark.config.SparkBaseConfig.IdleMode;
 import com.revrobotics.spark.config.SparkMaxConfig;
 
@@ -124,7 +121,7 @@ private SparkMax rightRear;
     public void my_drive(double speed, double turn){
         SmartDashboard.putNumber("Speed", speed);
         SmartDashboard.putNumber("Turn", turn);
-                differentialDrive1.arcadeDrive(speed, turn);
+                differentialDrive1.arcadeDrive(speed, turn, true);
     }
 }
 
