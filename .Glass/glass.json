@@ -1,0 +1,31 @@
+{
+  "NetworkTables": {
+    "retained": {
+      "SmartDashboard": {
+        "Lock to 0": {
+          "open": true
+        },
+        "Lock to 90": {
+          "open": true
+        },
+        "open": true
+      }
+    },
+    "types": {
+      "/FMSInfo": "FMSInfo",
+      "/SmartDashboard/Auto Mode": "String Chooser",
+      "/SmartDashboard/Autonomous Command": "Command",
+      "/SmartDashboard/DriveTrain": "Subsystem",
+      "/SmartDashboard/Lock to 0": "Command",
+      "/SmartDashboard/Lock to 90": "Command",
+      "/SmartDashboard/Reset Encoder": "Command"
+    }
+  },
+  "NetworkTables Info": {
+    "visible": true
+  },
+  "NetworkTables Settings": {
+    "mode": "Client (NT4)",
+    "serverTeam": "9999"
+  }
+}
